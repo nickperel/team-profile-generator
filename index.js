@@ -1,5 +1,8 @@
 const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+const generateHTML = require('./src/generateHTML');
 const employeeArray = [];
 
 function createManager() {
@@ -52,9 +55,9 @@ function addTeamMember() {
             createIntern();
         } else {
             // start generating the HTML file once finished
-            console.log('generate html file now')
+            const generatedHTML = generateHTML(employeeArray);
+            console.log(generatedHTML);
         }
-        
     })
 }
 
