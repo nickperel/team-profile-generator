@@ -19,6 +19,14 @@ function generateHTML(employeeArray) {
   }
 
   function createCard(employee) {
+    let thirdProp = ''
+      if (employee.getRole() === 'Manager') {
+        thirdProp = employee.getOfficeNumber();
+      } else if (employee.getRole() === 'Engineer') {
+        thirdProp = employee.getGithub();
+      } else if (employee.getRole() === 'Intern') {
+        thirdProp = employee.getSchool();
+      }
       return `
       <div class="card" style="width: 18rem;">
       <div class="card-body">
@@ -26,9 +34,9 @@ function generateHTML(employeeArray) {
         <p class="card-text">${employee.getRole()}.</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">${employee.getId()}</li>
+        <li class="list-group-item">${employee.getEmail()}</li>
+        <li class="list-group-item">${thirdProp}</li>
       </ul>
     </div>
     `;

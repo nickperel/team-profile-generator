@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const fs = require('fs');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
@@ -16,17 +17,17 @@ function createManager() {
         {
             type: 'input',
             name: 'id',
-            message: "What is the Manger's ID Number?"
+            message: "What is the Manager's ID Number?"
         },
         {
             type: 'input',
             name: 'email',
-            message: "What is the Manger's Email Address?"
+            message: "What is the Manager's Email Address?"
         },
         {
             type: 'input',
             name: 'officeNumber',
-            message: "What is the Manger's Office Number?"
+            message: "What is the Manager's Office Number?"
         }
     ])
     .then(answers => {
@@ -56,7 +57,9 @@ function addTeamMember() {
         } else {
             // start generating the HTML file once finished
             const generatedHTML = generateHTML(employeeArray);
-            console.log(generatedHTML);
+            fs.writeFile('./dist/index.html', generatedHTML, () => {
+                console.log('HTML was successfully created!')
+            });
         }
     })
 }
