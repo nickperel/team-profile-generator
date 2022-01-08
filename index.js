@@ -116,7 +116,7 @@ function createIntern() {
         {
             type: 'input',
             name: 'school',
-            message: "What school does the Intern's attend?"
+            message: "What school does the Intern attend?"
         }
     ])
     .then(answers => {
