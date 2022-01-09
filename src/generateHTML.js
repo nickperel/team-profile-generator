@@ -33,13 +33,13 @@ function generateHTML(employeeArray) {
     let thirdProp = ''
     let icon = ''
       if (employee.getRole() === 'Manager') {
-        thirdProp = employee.getOfficeNumber();
+        thirdProp = `Office Number: ${employee.getOfficeNumber()}`;
         icon = '<i class="fas fa-crown"></i>'
       } else if (employee.getRole() === 'Engineer') {
-        thirdProp = employee.getGithub();
+        thirdProp = `GitHub: <a href="https://github.com/${employee.getGithub()}" target="_blank">${employee.getGithub()}</a>`;
         icon = '<i class="fas fa-cogs"></i>'
       } else if (employee.getRole() === 'Intern') {
-        thirdProp = employee.getSchool();
+        thirdProp = `School: ${employee.getSchool()}`;
         icon = '<i class="fas fa-user-graduate"></i>'
       }
       return `
@@ -50,7 +50,7 @@ function generateHTML(employeeArray) {
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${employee.getId()}</li>
-        <li class="list-group-item">Email: ${employee.getEmail()}</li>
+        <li class="list-group-item">Email: <a href="mailto:${employee.getEmail()}">${employee.getEmail()}</a></li>
         <li class="list-group-item">${thirdProp}</li>
       </ul>
     </div>

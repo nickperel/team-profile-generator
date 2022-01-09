@@ -58,7 +58,7 @@ function addTeamMember() {
             // start generating the HTML file once finished
             const generatedHTML = generateHTML(employeeArray);
             fs.writeFile('./dist/index.html', generatedHTML, () => {
-                console.log('HTML was successfully created!')
+                console.log('HTML was successfully generated!')
             });
         }
     })
