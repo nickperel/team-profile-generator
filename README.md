@@ -1,4 +1,4 @@
-# Object-Oriented Programming Challenge: Team Profile Generator
+# Challenge 10: Object-Oriented Programming Challenge: Team Profile Generator
   [![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)
 
   ## Description
@@ -11,6 +11,10 @@
   * [Usage](#usage)
   * [Contributing](#contributing)
   * [License Info](#license-info)
+
+  ## Walkthrough Video
+  
+  *  https://watch.screencastify.com/v/WSYS2MWULh1o0xUHawVi
 
   ### Installation
   
